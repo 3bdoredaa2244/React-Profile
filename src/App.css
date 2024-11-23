@@ -1,12 +1,118 @@
+/* Default light theme */
+body.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Add styles for paragraphs and sections in dark mode */
+body.dark-theme p,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme ul {
+  color: #fff; /* Ensure text is white in dark mode */
+}
+
+body.dark-theme .App-header,
+body.dark-theme .about-me,
+body.dark-theme .skills,
+body.dark-theme .education,
+body.dark-theme .personal-touch {
+  background-color: #1e1e1e; /* Dark background for sections */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Theme toggle button */
+.theme-toggle button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.theme-toggle button:hover {
+  background-color: #0056b3;
+}
+
+/* Light theme specific */
+body.light-theme .App-header,
+body.light-theme .about-me,
+body.light-theme .skills,
+body.light-theme .education,
+body.light-theme .personal-touch {
+  background-color: #f9f9f9; /* Light background for sections */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+.theme-toggle button:hover {
+  background-color: #0056b3;
+}
+
+
 .App {
   text-align: center;
 }
 
+/* Style for the profile image */
+.App-profile {
+  width: 150px; /* Set the width of the image */
+  height: 150px; /* Set the height of the image */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image maintains aspect ratio and covers the area */
+  border: 3px solid #fff; /* Optional: add a border around the image */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: add a shadow around the image */
+  transition: transform 0.3s ease; /* Optional: smooth transition for hover effects */
+}
+
+.App-profile:hover {
+  transform: scale(1.1); /* Optional: scale the image when hovered */
+}
+
+
+/* Define the background color for logo */
+:root {
+  --logo-bg-light: #fff;
+  --logo-bg-dark: #121212;
+}
+
+body.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Apply background based on the theme */
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  max-width: 20%;
-  height: auto;
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  margin: 20px;
+  background-color: var(--logo-bg-light); /* Default light theme */
+  transition: background-color 0.3s ease; /* Smooth transition when changing themes */
+}
+
+/* Override for dark theme */
+body.dark-theme .App-logo {
+  background-color: var(--logo-bg-dark);
 }
 
 .App-image {
@@ -16,108 +122,124 @@
   margin-top: 20px;
   max-width: 100%;
   height: auto;
-  /*animation: App-logo-spin infinite 20s linear;*/
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition */
+  animation: App-logo-spin infinite 20s linear;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+
+  /* Highlight effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Initial subtle shadow */
 }
 
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-image:hover {
+  /* Highlight glow on hover */
+  transform: scale(1.1); /* Slight scaling effect */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6); /* Glowing effect */
 }
 
 .App-header {
-  background-color: #3368d2;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(208, 22, 22);
-  padding: 20px;
-  animation: App-logo-spin infinite 20s linear;
+  background-color: #282c34;
+  color: white;
+  padding: 20px 0;
+}
+
+.App-profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin: 0;
 }
 
-.App-link {
-  color: #fb9c61;
+h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 10px 0;
 }
 
-/* App.css */
+/* Social Links */
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 50px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.social-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;  /* Space between icon and text */
-}
-
-.social-button:hover {
-  transform: scale(1.05); /* Slight zoom effect */
+.social-icon {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .linkedin {
-  background-color: #0077b5;
-  color: white;
+  color: #0077b5;
 }
 
 .github {
-  background-color: #333;
+  color: #333;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.social-icon.linkedin:hover {
+  color: #005582;
+}
+
+.social-icon.github:hover {
+  color: #000;
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+}
+
+section {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: left;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #3368d2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #3368d2;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+li:before {
+  content: '•';
+  color: #3368d2;
+  position: absolute;
+  left: 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  padding: 10px 0;
+  background: #094cd2;
   color: white;
-}
-
-.youtube {
-  background-color: #ff0000;
-  color: white;
-}
-
-.instagram {
-  background-color: #e4405f;
-  color: white;
-}
-
-.social-button:hover.linkedin {
-  background-color: #005582;
-}
-
-.social-button:hover.github {
-  background-color: #111;
-}
-
-.social-button:hover.youtube {
-  background-color: #cc0000;
-}
-
-.social-button:hover.instagram {
-  background-color: #b3304c;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 0.9rem;
 }
